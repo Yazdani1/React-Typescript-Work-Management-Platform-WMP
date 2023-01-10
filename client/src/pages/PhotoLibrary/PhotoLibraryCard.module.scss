@@ -1,0 +1,18 @@
+.photoCardContainer {
+  display: flex;
+  span img {
+    height: 250px;
+    width: 250px;
+    border-radius: 5px;
+    margin-top: 5px;
+    object-fit: cover;
+  }
+}
+
+.selectedPhotoCardContiner {
+  @extend .photoCardContainer;
+
+  span img {
+    opacity: 0.5;
+  }
+}

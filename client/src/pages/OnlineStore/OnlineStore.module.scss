@@ -1,0 +1,45 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixin.scss";
+
+.onlineStoreInputField {
+  @include inputFieldDesign;
+}
+
+.photoLibraryViewTypeContainer {
+  display: flex;
+  justify-content: right;
+  cursor: pointer;
+  align-items: right;
+
+  p {
+    margin: 5px;
+  }
+
+  .iconContainer {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+}
+
+.selectedPhotoList {
+
+  img {
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .imageContainer {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    .closeIcon {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

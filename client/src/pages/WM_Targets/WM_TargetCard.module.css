@@ -1,0 +1,62 @@
+.target_Card_Container {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+
+ 
+  
+}
+
+
+
+.target_Card_Container p {
+  margin-left: 10px;
+  font-weight: 25px;
+}
+
+.checkBox_Target{
+  display: flex;
+}
+
+.actionButton{
+  display: flex;
+
+}
+
+.checkBox {
+  height: 25px;
+  width: 25px;
+  border-radius: 90px;
+}
+
+.roundedCheckbox {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid black;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.roundedCheckbox:checked {
+  appearance: auto;
+  clip-path: circle(50% at 50% 50%);
+  background-color: greenyellow;
+}
+
+.inputAreaDesign {
+  display: flex;
+}
+
+input[type="checkbox"] {
+  accent-color: green;
+}
+.inputAreaDesign textarea {
+  margin-left: 10px;
+  margin-top: -10px;
+}

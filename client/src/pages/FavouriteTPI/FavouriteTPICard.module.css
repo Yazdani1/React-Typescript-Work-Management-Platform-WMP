@@ -1,0 +1,10 @@
+.favouriteTPIContainer {
+    border-radius: 10px;
+    
+}
+
+.itemRow {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
