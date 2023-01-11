@@ -195,7 +195,6 @@ const OnlineStore = () => {
   return (
     <PageLayout>
       {/* To show all the online store posts 
-      
       we retrive all the online store posts and show in this card. 
       */}
       <CardLayout
@@ -228,7 +227,6 @@ const OnlineStore = () => {
         onResetButton={resetOnlineStoreInputField}
       >
         <label>Title:</label>
-
         <div className="form-group">
           <input
             type="text"
@@ -238,9 +236,7 @@ const OnlineStore = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-
         <label>Description:</label>
-
         <div className="form-group">
           <textarea
             name="Photo URL"
