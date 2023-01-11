@@ -3,16 +3,11 @@
 
 
 .photoUrlInput{
-
     @include inputFieldDesign;
-
-
 }
-
 
 .createPhotoLibrarytitle{
     display: flex;
-
     span{
         margin-left: 10px;
         margin-top: 4px;
@@ -29,7 +24,6 @@
     .paginationItem{
         margin: auto;
         display: flex;
-
         .paginationPageNumber p{
             border: 1px solid black;
             margin: 3px;
@@ -40,7 +34,6 @@
             text-align: center;
             justify-content: center;
         }
-
         .activePagePaginationNumber p{
             border: 1px solid black;
             margin: 3px;

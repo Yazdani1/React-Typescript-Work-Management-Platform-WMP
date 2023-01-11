@@ -1,7 +1,6 @@
 
 .onlineStoreCardContainer{
     display: flex;
-
     .onlineStorePhoto img{
         margin-top: 10px;
         display: block;
@@ -10,7 +9,6 @@
         border-radius: 10px;
         object-fit: cover;
     }
-
     .onlineStoreDetailsInfo{
         margin-left: 20px;
     }
@@ -21,5 +19,4 @@
         width: fit-content;
         border-radius: 5px;
     }
-
 }
