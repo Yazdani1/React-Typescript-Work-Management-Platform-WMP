@@ -1,0 +1,17 @@
+.wm_header {
+    display: flex;
+}
+
+.wm_header p{
+
+    margin-left: 10px;
+    margin-top: -3px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wm_form input{
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+}

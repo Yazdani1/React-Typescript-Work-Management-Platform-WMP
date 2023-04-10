@@ -1,0 +1,88 @@
+
+.wmInfoInputField input{
+
+    height: 50px;
+    border-radius: 10px;
+
+}
+
+.wmInfoStatusRed{
+    height: 80px;
+    width: 80px;
+    border-radius: 90px;
+    background-color: red;
+    color: red;
+    cursor: pointer;
+}
+
+.wmInfoStatusGreen {
+    height: 80px;
+    width: 80px;
+    border-radius: 90px;
+    background-color: green;
+    color: green;
+    cursor: pointer;
+
+}
+
+.wmInfoStatusYellow{
+    height: 80px;
+    width: 80px;
+    border-radius: 90px;
+    background-color: yellow;
+    color: yellow;
+    cursor: pointer;
+}
+
+.optionDesign {
+    background-color: aliceblue;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+
+    -moz-box-shadow: inset 0px 0px 7px  rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: inset 0px 0px 7px  rgba(0, 0, 0, 0.33);        
+    box-shadow: inset 0px 0px 7px  rgba(0, 0, 0, 0.33);
+}
+
+/* to design wm info card */
+
+.cardContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: auto;
+}
+.wmInfoText {
+    flex: 2;
+}
+
+.wmInfoStatus {
+    flex: 1;
+   
+}
+
+.statusCircleRedDesign{
+    height: 80px;
+    width: 80px;
+    border-radius: 90px;
+    background-color: red;
+}
+
+.statusCircleGreenDesign {
+    height: 80px;
+    width: 80px;
+    border-radius: 90px;
+    background-color: green;
+}
+
+.statusCircleYellowDesign {
+    height: 80px;
+    width: 80px;
+    border-radius: 90px;
+    background-color: yellow;
+    border: 5px solid yellowgreen;
+}

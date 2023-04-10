@@ -1,0 +1,20 @@
+
+.itemList{
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.itemMarked {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: orangered;
+    cursor: pointer;
+}

@@ -1,0 +1,51 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixin.scss";
+
+
+.photoUrlInput{
+    @include inputFieldDesign;
+}
+
+.createPhotoLibrarytitle{
+    display: flex;
+    span{
+        margin-left: 10px;
+        margin-top: 4px;
+        cursor: pointer;
+    }
+}
+
+.paginationContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    cursor: pointer;
+    .paginationItem{
+        margin: auto;
+        display: flex;
+        .paginationPageNumber p{
+            border: 1px solid black;
+            margin: 3px;
+            padding: 10px;
+            height: 40px;
+            width: 40px;
+            border-radius: 90px;
+            text-align: center;
+            justify-content: center;
+        }
+        .activePagePaginationNumber p{
+            border: 1px solid black;
+            margin: 3px;
+            padding: 10px;
+            height: 40px;
+            width: 40px;
+            border-radius: 90px;
+            text-align: center;
+            justify-content: center;
+            background-color: black;
+            color: white;
+        }
+    }
+
+}

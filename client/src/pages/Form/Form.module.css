@@ -1,0 +1,54 @@
+
+
+.formStepContainer{
+
+    display: flex;
+
+  
+
+}
+
+.firstStepCircle{
+    height: 50px;
+    width: 50px;
+    background-color: grey;
+    border-radius: 90px;
+}
+
+.stepCompleted {
+    height: 50px;
+    width: 50px;
+    background-color:green;
+    border-radius: 90px;
+}
+
+.stepCompleted h5{
+    text-align: center;
+    line-height: 40px;
+    color: white;
+}
+
+.firstStepCircle h5{
+   text-align: center;
+   line-height: 40px;
+   color: white;
+}
+
+.circleDotBorderDesign{
+    display: block;
+    border: 0;
+    border-top: 4px dotted #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width: 150px;
+    
+}
+
+.stepCompleteddot{
+    display: block;
+    border: 0;
+    border-top: 4px dotted green;
+    margin: 1em 0;
+    padding: 0;
+    width: 150px;
+}

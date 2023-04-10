@@ -1,0 +1,51 @@
+.sidebar-section{
+    display: flex;
+    background-color: black;
+
+}
+
+.sidebar{
+    height: 100vh;
+    background-color: black;
+    width: 95px;
+    position: fixed;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-y: scroll;
+
+
+}
+
+
+.sidebar-expand {
+    width: 230px;
+}
+
+.icon-for-sidebar-expand-and-collapse{
+
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    cursor: pointer;
+}
+
+.icon-for-sidebar-expand-and-collapse p svg{
+
+    background-color: black;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 50px;
+
+}
+
+.container-fluid{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+    overflow: hidden;
+}
+@media (max-width:1200px) {
+    .sidebar{
+        display: none;
+    }
+}

@@ -1,0 +1,49 @@
+.dots {
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.active {
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.imageViewContainer {
+  display: flex;
+
+  .allImageListDesign {
+    flex: 1;
+    cursor: pointer;
+    .imagePreviewList {
+      margin: 10px;
+      img {
+        object-fit: cover;
+      }
+    }
+
+    .selectedImageDesign {
+      margin: 10px;
+      img {
+        object-fit: cover;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .singleImageViewDesign {
+    flex: 2;
+  }
+}

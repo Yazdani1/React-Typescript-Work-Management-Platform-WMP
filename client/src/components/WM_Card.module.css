@@ -1,0 +1,23 @@
+.wm_container{
+    display: flex;
+}
+
+.wm_container p{
+    margin-left: 10px;
+    margin-top: -3px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.tpi_item_design{
+    padding-top: 5px;
+}
+
+.tpi_form input{
+
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 10px;
+
+}

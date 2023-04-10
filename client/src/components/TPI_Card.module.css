@@ -1,0 +1,44 @@
+.tpicard {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.tpicard h6 {
+  overflow-wrap: break-word;
+}
+
+.dropDownCard {
+  width: fit-content;
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+  padding: 10px;
+  position: fixed;
+  background-color: wheat;
+  margin-top: 40px;
+}
+
+.tpiMoreIconRow {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+.itemRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tpi_update_form input {
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.tpiTitleRow{
+  display: flex;
+}
+
+.tpiTitleRow p{
+  margin-left: 10px;
+  margin-top: -3px;
+}

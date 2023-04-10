@@ -1,0 +1,21 @@
+.webCardContainer{
+    background-color: brown;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
+.webCardContainer h4{
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+}
+
+.webCardContainer h2{
+    text-align:  center;
+    color: greenyellow;
+    font-size: 17px;
+    border-radius: 10px;
+    border: 1px solid black;
+}

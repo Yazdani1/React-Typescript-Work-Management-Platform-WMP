@@ -1,0 +1,57 @@
+.product_container{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.product_container p{
+    line-height: 15px;
+}
+.titleRow{
+    display: flex;
+    justify-content: space-between;
+}
+.product_price{
+    background-color: rgb(232, 219, 39);
+    padding: 5px;
+    color:black;
+    width: fit-content;
+    font-weight: bold;
+}
+.featured {
+    background-color: rgb(207, 36, 13);
+    /* background-color: rgb(13, 133, 207); */
+    padding: 5px;
+    color:white;
+    width: fit-content;
+    font-weight: bold;
+}
+.itemRow{
+    display: flex;
+    justify-content: space-between;
+}
+.radio_buttons {
+    display: flex;
+    gap: 3rem;
+}
+.lableDesign{
+    margin-top: -50px;
+    color: red;
+    background-color: yellow;
+}
+
+.featuredCheckBox {
+    display: flex;
+}
+.checkBoxText {
+    margin-top: -44px;
+    margin-left: 25px;
+}
+.custom_select{
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+}
