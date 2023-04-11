@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import style from "./PostMark.module.scss";
 import PageLayout from "../../Pagelayout/PageLayout";
