@@ -6,10 +6,10 @@ import { getJsonPlaceHolderPostData } from "../../API";
 import CardLayout from "../../components/CardLayout";
 
 const PostMark = () => {
+
   /****************************************/
   /************* Load all data  ***********/
   /****************************************/
-
   const [allData, setAllData] = useState<any>([]);
   const [selectedPost, setSelectedPost] = useState<number>(0);
 
@@ -75,7 +75,6 @@ const PostMark = () => {
             <button className="btn btn-primary" onClick={handleNextPost}>
               Next
             </button>
-
             {selectedPost >= 1 && (
               <button className="btn btn-success" onClick={handlePreviousPost}>
                 Previous
