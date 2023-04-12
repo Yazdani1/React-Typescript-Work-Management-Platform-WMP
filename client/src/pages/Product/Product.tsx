@@ -232,7 +232,6 @@ const Product = () => {
   useEffect(() => {
     loadAllProducts();
     loadAllFeturedProducts();
-    // searchProducts();
   }, []);
 
   return (
@@ -270,12 +269,6 @@ const Product = () => {
                     {Object.keys(Colors).map((i, index) => (
                       <option value={i}>{i}</option>
                     ))}
-
-                    {/* <option value="Red">Red</option>
-                    <option value="Green">Green</option>
-                    <option value="Yellow">Yellow</option>
-                    <option value="Black">Black</option>
-                    <option value="White">White</option> */}
                   </select>
                 </div>
 
