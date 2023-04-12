@@ -323,12 +323,6 @@ const Product = () => {
           <div className="col-xl-8 col-lg-8 col-md-12 col-sm-12">
             <CardLayout backgroun_color="white">
               <div style={{ display: "flex", marginLeft: "10px" }}>
-                {/* <input
-                  type="checkbox"
-                  checked={checkedAllProduct}
-                  onChange={handleCheckBoxAllProductValueChange}
-                />
-                <h6 style={{ marginLeft: "10px" }}>All Products</h6> */}
                 <input
                   type="checkbox"
                   checked={checkedFeatured}
