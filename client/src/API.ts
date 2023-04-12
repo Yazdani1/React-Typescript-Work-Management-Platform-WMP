@@ -1,8 +1,10 @@
 import axios from "axios";
 import { API_URL } from "./config";
 import { WMInfoStatus } from "./Dataprovider";
-
-// to load vide url
+ 
+/**
+ * To load video URL
+ */
 
 const VIDEO_API_URL = "https://video-stream-platform.vercel.app/api";
 
