@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { IoAddCircleSharp } from "react-icons/io5";
 import { ToastContainer, toast } from "react-toastify";
 
 import PageLayout from "../../Pagelayout/PageLayout";
@@ -141,8 +140,6 @@ const PhotoLibrary = () => {
     }
   };
 
-
-
   useEffect(() => {
     // loadPhotoLibrary();
     loadPhotoWithPagination();
@@ -216,13 +213,11 @@ const PhotoLibrary = () => {
         showActionButton={true}
       >
         <label>Photo Link:</label>
-
         <div className="form-group">
           <input
             type="text"
             name="Photo URL"
             className={style.photoUrlInput}
-            // placeholder="Title.."
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
