@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import PageLayout from "../../Pagelayout/PageLayout";
 import CardLayout from "../../components/CardLayout";
 import ModalBox from "../../components/Modal Package/ModalBox";
 import style from "./PhotoLibrary.module.scss";
-import { PhotoLibraryInfo } from "../../Dataprovider";
 import {
   getPhotoLibrary,
   CreatePhotoLinraryProps,
