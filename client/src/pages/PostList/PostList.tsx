@@ -20,7 +20,6 @@ const PostList = () => {
   const loadAllOnlineStorePost = async () => {
     try {
       const res = await getOnlineStore();
-
       setAllPosts(res.data);
     } catch (error: any) {
       toast.error(error.response && error.response.data.error, {
@@ -38,6 +37,7 @@ const PostList = () => {
   const onOpenModal = () => {
     setOpen(true);
   };
+  
   const onCloseModal = () => {
     setOpen(false);
   };
