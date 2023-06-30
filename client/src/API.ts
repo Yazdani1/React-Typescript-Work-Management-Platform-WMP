@@ -353,9 +353,7 @@ export const getPhotoLibrary = async () => {
   const res = await axios.get(API_URL + "/get-photos");
   return res;
 };
-
 // to get photo library with pagination
-
 export const getPhotoLibraryWithPagination = async (
   page: number,
   limit: number

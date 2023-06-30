@@ -16,11 +16,8 @@ const TestOne = () => {
   ]);
 
   // to update post
-
   const [postId, setPostId] = useState(Number);
   const [toogle, setToggle] = useState<boolean>(false);
-
-
   // to create post when user click on the submit button..
 
   const onSubmitCreatePost = () => {
@@ -41,7 +38,6 @@ const TestOne = () => {
     }
 
     // to update one single item from the list
-
     if (toogle === true) {
       setPostList(
         postList &&
