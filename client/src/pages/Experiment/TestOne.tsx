@@ -14,7 +14,7 @@ const TestOne = () => {
     { title: "First title", description: "First Description" },
   ]);
 
-  
+
   // to update post
   const [postId, setPostId] = useState(Number);
   const [toogle, setToggle] = useState<boolean>(false);
@@ -76,7 +76,6 @@ const TestOne = () => {
         <div>
           <div style={{ width: "750px" }}>
             <label>Title:</label>
-
             <input
               type="text"
               className="form-control"
@@ -84,10 +83,8 @@ const TestOne = () => {
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
-
           <div style={{ width: "750px" }}>
             <label>Description:</label>
-
             <input
               type="text"
               className="form-control"
@@ -95,7 +92,6 @@ const TestOne = () => {
               onChange={(e) => setDescription(e.target.value)}
             />
           </div>
-
           <button
             onClick={onSubmitCreatePost}
             style={{ marginTop: "15px" }}
