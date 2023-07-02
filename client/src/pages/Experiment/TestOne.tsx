@@ -3,18 +3,18 @@ import React, { useState, useEffect } from "react";
 import PageLayout from "../../Pagelayout/PageLayout";
 import CardLayout from "../../components/CardLayout";
 
-
 const TestOne = () => {
 
   // Input state..
-
   const [title, setTitle] = useState<string>();
   const [description, setDescription] = useState<string>("");
+
 
   const [postList, setPostList] = useState<any>([
     { title: "First title", description: "First Description" },
   ]);
 
+  
   // to update post
   const [postId, setPostId] = useState(Number);
   const [toogle, setToggle] = useState<boolean>(false);
