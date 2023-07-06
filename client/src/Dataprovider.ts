@@ -182,3 +182,15 @@ export interface TPIItems extends IBase{
   tpi_item_info:TPIIListItemsProps
 
 }
+
+
+export enum TransPortLocation {
+
+  ESSEN = "ESSEN",
+  DORTMUND = "DORTMUND",
+  KOLN ="KOLN",
+  BOCHUM = "BOCHUM",
+  AACHEN = "AACHEN",
+  FRANKFRUIT = "FRANKFRUIT"
+
+}

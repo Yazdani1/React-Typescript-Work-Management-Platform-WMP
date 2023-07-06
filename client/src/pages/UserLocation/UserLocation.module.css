@@ -1,0 +1,9 @@
+.selectlistContainer{
+    display: flex;
+    margin: 20px;
+}
+
+.optionDropdowndesign{
+    height: 50px;
+    width: 200px;
+}

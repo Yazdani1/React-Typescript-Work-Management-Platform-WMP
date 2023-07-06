@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import PageLayout from "../../Pagelayout/PageLayout";
+import { TransPortLocation } from "../../Dataprovider";
+import CardLayout from "../../components/CardLayout";
+import style from "./UserLocation.module.css";
 
 const UserLocation = () => {
   const [location, setLocation] = useState<any>({});
@@ -30,9 +33,23 @@ const UserLocation = () => {
         ipAddress: ipData.ip_address,
         latitude: latitude,
         longitude: longitude,
-        continent:locationData.continent,
+        continent: locationData.continent,
       });
     });
+  };
+
+  // Trans port destination
+
+  const [departureCity, setDepartureCity] = useState<TransPortLocation>(
+    TransPortLocation.BOCHUM
+  );
+  const [arrivaleCity, setArrivaleCity] = useState<TransPortLocation>(
+    TransPortLocation.DORTMUND
+  );
+
+  const handleChangeCity = () => {
+    setDepartureCity(arrivaleCity);
+    setArrivaleCity(departureCity);
   };
 
   useEffect(() => {
@@ -42,7 +59,9 @@ const UserLocation = () => {
   return (
     <PageLayout>
       <div>
-        <button className="btn btn-primary" onClick={handleClick}>Get Location</button>
+        <button className="btn btn-primary" onClick={handleClick}>
+          Get Location
+        </button>
         {location.city && (
           <div>
             <p>City: {location.city}</p>
@@ -54,6 +73,42 @@ const UserLocation = () => {
           </div>
         )}
       </div>
+
+      <CardLayout backgroun_color="white">
+        <div className={style.selectlistContainer}>
+          <div className="selected-dropdownlist">
+            <select
+              value={departureCity}
+              className={style.optionDropdowndesign}
+              onChange={(e) =>
+                setDepartureCity(e.target.value as TransPortLocation)
+              }
+            >
+              {Object.keys(TransPortLocation).map((i, index) => (
+                <option value={i}>{i}</option>
+              ))}
+            </select>
+          </div>
+
+          <button className="btn btn-success" onClick={handleChangeCity}>
+            Switch
+          </button>
+
+          <div className="selected-dropdownlist">
+            <select
+              value={arrivaleCity}
+              className={style.optionDropdowndesign}
+              onChange={(e) =>
+                setArrivaleCity(e.target.value as TransPortLocation)
+              }
+            >
+              {Object.keys(TransPortLocation).map((i, index) => (
+                <option value={i}>{i}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </CardLayout>
     </PageLayout>
   );
 };
