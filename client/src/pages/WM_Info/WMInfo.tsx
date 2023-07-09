@@ -84,6 +84,7 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
           <CardLayout backgroun_color="white">
             <div className={WMStyle.wm_header}>
               <h6>Create WM Info</h6>
@@ -94,6 +95,7 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
             {allWmInfo &&
               allWmInfo.map((info, index) => <WMInfoCard wminfo={info} loadAllWMInfo={loadAllWMInfo} index={index}/>)}
           </CardLayout>
+          
         </div>
       </div>
       <Modal
@@ -131,11 +133,13 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
                 value={wmInfoStatus}
                 onChange={(e) => setWmInfoStatus(e.target.value)}
               >
+
                 {Object.keys(WMInfoStatus).map((w, index) => (
                   <option value={w} className={wmInfoStyle.optionDesign}>
                     {w}
                   </option>
                 ))}
+
               </select>
             </div>
           </div>
