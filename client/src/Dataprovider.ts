@@ -180,7 +180,6 @@ export interface TPIItems extends IBase{
 
   tpi_Item_Name: string;
   tpi_item_info:TPIIListItemsProps
-
 }
 
 
