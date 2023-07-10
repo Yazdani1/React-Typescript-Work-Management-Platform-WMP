@@ -62,7 +62,7 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
   //////////////////////////////////////////////////////
 
 
-  const [allWmInfo, setAllWmInfo] = useState([]);
+  const [allWmInfo, setAllWmInfo] = useState<any>([]);
   const loadAllWMInfo = async () => {
     try {
       const res = await getAllWMInfo(slug!);

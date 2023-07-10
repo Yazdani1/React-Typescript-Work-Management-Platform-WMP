@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./WMNoteCard.module.css";
 import PageLayout from "../../Pagelayout/PageLayout";
 
