@@ -367,16 +367,19 @@ export const getPhotoLibraryWithPagination = async (
 //////////////////////////////////////////////////////
 //////////  Online Store    //////////////////////////
 //////////////////////////////////////////////////////
+
 export interface CreateOnlineStoreProps {
   title: string;
   des: string;
   price: number;
   photo: [];
 }
+
 export const createOnlineStore = async (props: CreateOnlineStoreProps) => {
   const res = await axios.post(API_URL + "/create-online-store", { ...props });
   return res;
 };
+
 export const getOnlineStore = async () => {
   const res = await axios.get(API_URL + "/get-all-onlineStore");
   return res;
@@ -440,6 +443,7 @@ export const deleteHomeRental = async (id: string) => {
   const res = await axios.delete(API_URL + "/delete-homerental/" + id);
   return res;
 };
+
 
 /**
  *
