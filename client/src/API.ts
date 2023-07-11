@@ -439,6 +439,7 @@ export const getAllHomeRental = async () => {
  * @returns
  */
 
+
 export const deleteHomeRental = async (id: string) => {
   const res = await axios.delete(API_URL + "/delete-homerental/" + id);
   return res;
@@ -465,7 +466,6 @@ export interface CreateTPIItems {
   value: number;
   details: string;
 }
-
 export interface CreateTPIItemsProps {
   tpi_Item_Name: string;
   tpi_item_info: CreateTPIItems[];
