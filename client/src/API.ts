@@ -466,6 +466,7 @@ export interface CreateTPIItems {
   value: number;
   details: string;
 }
+
 export interface CreateTPIItemsProps {
   tpi_Item_Name: string;
   tpi_item_info: CreateTPIItems[];
@@ -491,9 +492,7 @@ export const deleteTpiItemsArrayItem = async (id: string) => {
 /////////////////  Post Mark   ///////////////////////
 //////////////////////////////////////////////////////
 
-
 const API_JOSN_URL = "https://jsonplaceholder.typicode.com/posts";
-
 export const getJsonPlaceHolderPostData = async()=>{
   const res = await axios.get(API_JOSN_URL);
   return res;
