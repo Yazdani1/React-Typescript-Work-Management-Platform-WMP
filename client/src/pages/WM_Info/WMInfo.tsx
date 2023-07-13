@@ -34,16 +34,19 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
   //////////////////////////////////////////////////////
   ////////// Create WM Info        /////////////////////
   //////////////////////////////////////////////////////
+
   const [wmInfoStatus, setWmInfoStatus] = useState<string | any>(WMInfoStatus.RED);
   const [wmInfo, setWmInfo] = useState<string>("");
 
   const onSubmitCreateWMInfo = async () => {
     try {
+
       const payload: CreateWMInfoProps = {
         wminfo: wmInfo,
         status: wmInfoStatus,
         wm_id: singleWm_ID,
       };
+      
       const res = await createWMInfo(payload);
       if (res) {
         toast.success("Successfully created wm info", {
