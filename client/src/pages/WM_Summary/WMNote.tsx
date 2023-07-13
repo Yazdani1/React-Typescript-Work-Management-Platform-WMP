@@ -1,4 +1,3 @@
-
 import PageLayout from "../../Pagelayout/PageLayout";
 
 const WMNote = () => {
