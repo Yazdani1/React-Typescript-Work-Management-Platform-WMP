@@ -135,13 +135,11 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
                 value={wmInfoStatus}
                 onChange={(e) => setWmInfoStatus(e.target.value)}
               >
-
                 {Object.keys(WMInfoStatus).map((w, index) => (
                   <option value={w} className={wmInfoStyle.optionDesign}>
                     {w}
                   </option>
                 ))}
-
               </select>
             </div>
           </div>
