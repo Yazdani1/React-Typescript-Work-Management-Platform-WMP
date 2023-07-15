@@ -95,7 +95,7 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
               </p>
             </div>
             {allWmInfo &&
-              allWmInfo.map((info, index) => <WMInfoCard wminfo={info} loadAllWMInfo={loadAllWMInfo} index={index}/>)}
+              allWmInfo.map((info:any, index:any) => <WMInfoCard wminfo={info} loadAllWMInfo={loadAllWMInfo} index={index}/>)}
           </CardLayout>
           
         </div>
