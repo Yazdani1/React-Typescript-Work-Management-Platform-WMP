@@ -48,10 +48,12 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
       };
       
       const res = await createWMInfo(payload);
+
       if (res) {
         toast.success("Successfully created wm info", {
           position: toast.POSITION.TOP_RIGHT,
         });
+
         loadAllWMInfo();
       }
     } catch (error: any) {
@@ -67,10 +69,13 @@ const WMInfo: FC<WMInfoProps> = ({ slug, singleWm_ID }) => {
   const [allWmInfo, setAllWmInfo] = useState<any>([]);
   const loadAllWMInfo = async () => {
     try {
+
       const res = await getAllWMInfo(slug!);
+
       if (res) {
         setAllWmInfo(res.data);
       }
+      
     } catch (error: any) {
       toast.error(error.response && error.response.data.error, {
         position: toast.POSITION.TOP_RIGHT,
