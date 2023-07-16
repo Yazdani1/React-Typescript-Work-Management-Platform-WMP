@@ -477,10 +477,12 @@ export const createTPIItems = async (props: CreateTPIItemsProps) => {
   return res;
 };
 
+
 export const getTpiItems = async () => {
   const res = await axios.get(API_URL + "/all-tpi-item-list");
   return res;
 };
+
 
 export const deleteTpiItemsArrayItem = async (id: string) => {
   const res = await axios.delete(API_URL + "/delete-single-item/" + id);
