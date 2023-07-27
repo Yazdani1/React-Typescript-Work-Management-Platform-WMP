@@ -59,7 +59,9 @@ const OnlineStore = () => {
     );
   };
 
+
   // to remove all the selected image from the library
+
   const removeAlltheSelectedPhoto = () => {
     setPhotoLibraryPhotoID([]);
   };
@@ -98,6 +100,7 @@ const OnlineStore = () => {
     }
   };
 
+
   // to clear input form once user successfully created online store
 
   const resetOnlineStoreInputField = () => {
@@ -127,10 +130,12 @@ const OnlineStore = () => {
     }
   };
 
+
   /****************************************/
   /*** Modal Box to Create Online Store ***/
   /****************************************/
 
+  
   const [open, setOpen] = useState<boolean>(false);
 
   const onOpenModal = () => {
