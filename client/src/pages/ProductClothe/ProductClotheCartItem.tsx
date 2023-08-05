@@ -13,7 +13,11 @@ interface ProductClotheCartItemProps {
 const ProductClotheCartItem: FC<ProductClotheCartItemProps> = ({
   product_Cart_item,
 }) => {
-  const { addProduct, product } = useProductClotheContext();
+  const { addProduct, product,removeProduct } = useProductClotheContext();
+
+  const handleRemoveProduct = (productId:number) => {
+    removeProduct(productId);
+  };
 
   return (
     <CardLayout>
@@ -27,7 +31,7 @@ const ProductClotheCartItem: FC<ProductClotheCartItemProps> = ({
 
       <button
         className="btn btn-danger"
-        //   onClick={() => addProducttoCart(product_items)}
+          onClick={() => handleRemoveProduct(product_Cart_item.id)}
       >
         Remove Product
       </button>
