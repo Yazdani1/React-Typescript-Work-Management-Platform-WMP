@@ -195,3 +195,30 @@ export enum TransPortLocation {
   FRANKFRUIT = "FRANKFRUIT"
 
 }
+
+//////////////////////////////////////////////////////
+/////////////// Product Clothe   /////////////////////
+//////////////////////////////////////////////////////
+
+// This is for an external api to show product and to implement card system using context api and redux toolkit
+
+interface ProductClotheRatings{
+  rate: number,
+  count: number
+}
+
+export interface ProductClotheItem {
+
+  id: number,
+  title: string,
+  price: number,
+  description: string,
+  category: string,
+  image: string,
+  rating:ProductClotheRatings
+
+}
+
+
+
+

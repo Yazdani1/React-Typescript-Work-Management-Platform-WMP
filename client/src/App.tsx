@@ -26,46 +26,55 @@ import UserLocation from "./pages/UserLocation/UserLocation";
 import PdfFileReader from "./pages/PdfFileReader/PdfFileReader";
 import TpiItems from "./pages/TpiItems/TpiItems";
 import PostMark from "./pages/PostMark/PostMark";
+import ProductClothe from "./pages/ProductClothe/ProductClothe";
+import { ProductClotheProvider } from "./ContextApi/ProductClotheContext";
+import ProductClotheCart from "./pages/ProductClothe/ProductClotheCart";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<WorkManagementOverview />} />
-        <Route path="/tpi-details/:slug" element={<TPI_Details />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/wm-details/:slug" element={<WM_Targets />} />
-        <Route path="/favourite-tpi" element={<FavouriteTPI />} />
-        <Route path="/ecommerce" element={<ECommerce />} />
-        <Route path="/expense" element={<Expense />} />
-        <Route path="/form" element={<Form />} />
-        <Route path="/test-responsive" element={<TestResponsive />} />
-        <Route path="/photo-library" element={<PhotoLibrary />} />
-        <Route path="/online-store" element={<OnlineStore />} />
-        <Route path="/test-one" element={<TestOne />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/postlist" element={<PostList />} />
-        <Route path="/video" element={<Video />} />
-        <Route path="/map-marker" element={<MapMarker />} />
-        <Route path="/home-rental" element={<HomeRental />} />
-        <Route path="/home-rental-details/:id" element={<HomeRentalDetails />} />
-        <Route path="/maptest" element={<MapTest />} />
-        <Route path="/linkedinpost" element={<LinkedinPost />} />
-        <Route path="/pdffile-reader" element={<PdfFileReader />} />
-        <Route path="/tpi-items" element={<TpiItems />} />
-        <Route path="/user-location" element={<UserLocation />} />
-        <Route path="/post-mark" element={<PostMark />} />
+    <ProductClotheProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<WorkManagementOverview />} />
+          <Route path="/tpi-details/:slug" element={<TPI_Details />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/wm-details/:slug" element={<WM_Targets />} />
+          <Route path="/favourite-tpi" element={<FavouriteTPI />} />
+          <Route path="/ecommerce" element={<ECommerce />} />
+          <Route path="/expense" element={<Expense />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/test-responsive" element={<TestResponsive />} />
+          <Route path="/photo-library" element={<PhotoLibrary />} />
+          <Route path="/online-store" element={<OnlineStore />} />
+          <Route path="/test-one" element={<TestOne />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/postlist" element={<PostList />} />
+          <Route path="/video" element={<Video />} />
+          <Route path="/map-marker" element={<MapMarker />} />
+          <Route path="/home-rental" element={<HomeRental />} />
+          <Route
+            path="/home-rental-details/:id"
+            element={<HomeRentalDetails />}
+          />
+          <Route path="/maptest" element={<MapTest />} />
+          <Route path="/linkedinpost" element={<LinkedinPost />} />
+          <Route path="/pdffile-reader" element={<PdfFileReader />} />
+          <Route path="/tpi-items" element={<TpiItems />} />
+          <Route path="/user-location" element={<UserLocation />} />
+          <Route path="/post-mark" element={<PostMark />} />
+          <Route path="/product-clothe" element={<ProductClothe />} />
+          <Route path="/product-clothe-cart" element={<ProductClotheCart />} />
 
-        
-      </Routes>
-      <TitleUpdater />
-      <ToastContainer autoClose={8000} />
-    </BrowserRouter>
+          
+        </Routes>
+        <TitleUpdater />
+        <ToastContainer autoClose={8000} />
+      </BrowserRouter>
+    </ProductClotheProvider>
   );
 };
 
-
-// This function is showing browser tab title based on the component name. when user move from 
+// This function is showing browser tab title based on the component name. when user move from
 //one component to another that particular component name will be shown in the browser tab
 
 const TitleUpdater = () => {

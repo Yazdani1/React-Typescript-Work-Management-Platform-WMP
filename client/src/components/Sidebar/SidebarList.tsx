@@ -14,7 +14,6 @@ interface IPropsSidebarList {
   expandSidebar: boolean;
 }
 
-
 const SidebarList: FC<IPropsSidebarList> = ({ expandSidebar }) => {
   return (
     <React.Fragment>
@@ -279,7 +278,6 @@ const SidebarList: FC<IPropsSidebarList> = ({ expandSidebar }) => {
               </NavLink>
             </li>
 
-            
             <li className="nav-item">
               <NavLink
                 to={"/linkedinpost"}
@@ -314,7 +312,6 @@ const SidebarList: FC<IPropsSidebarList> = ({ expandSidebar }) => {
               </NavLink>
             </li>
 
-            
             <li className="nav-item">
               <NavLink
                 to={"/tpi-items"}
@@ -366,7 +363,22 @@ const SidebarList: FC<IPropsSidebarList> = ({ expandSidebar }) => {
               </NavLink>
             </li>
 
-
+            <li className="nav-item">
+              <NavLink
+                to={"/product-clothe"}
+                style={({ isActive }) =>
+                  isActive
+                    ? {
+                        color: "white",
+                        textDecoration: "none",
+                        borderLeft: "3px solid yellow",
+                      }
+                    : { color: "white", textDecoration: "none" }
+                }
+              >
+                <AiFillStar size={25} color="yellow" /> Product Clothe
+              </NavLink>
+            </li>
           </ul>
         </div>
       ) : (

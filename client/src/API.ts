@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_URL } from "./config";
-import { WMInfoStatus } from "./Dataprovider";
+import { WMInfoStatus,ProductClotheItem } from "./Dataprovider";
  
 /**
  * To load video URL
@@ -498,6 +498,20 @@ const API_JOSN_URL = "https://jsonplaceholder.typicode.com/posts";
 export const getJsonPlaceHolderPostData = async()=>{
   const res = await axios.get(API_JOSN_URL);
   return res;
+}
+
+
+//////////////////////////////////////////////////////
+/////////////// Product Clothe   /////////////////////
+//////////////////////////////////////////////////////
+
+const PRODUCT_API = "https://fakestoreapi.com/products";
+
+export const getAllProductsClothe = async(): Promise<ProductClotheItem[]> =>{
+
+  const res = await axios.get(PRODUCT_API);
+  return res.data as ProductClotheItem[];
+
 }
 
 

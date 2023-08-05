@@ -135,7 +135,7 @@ const OnlineStore = () => {
   /*** Modal Box to Create Online Store ***/
   /****************************************/
 
-  
+
   const [open, setOpen] = useState<boolean>(false);
 
   const onOpenModal = () => {
@@ -355,7 +355,7 @@ const OnlineStore = () => {
           {chooseLibraryView === PhotoLibraryViewType.LIST_VIEW &&
             photoLibraryPhoto &&
             photoLibraryPhoto.map((photo) => (
-              <div className="col-xl-12 col-lg-12 col-sm-12">
+              <div className="col-xl-6 col-lg-6 col-sm-6">
                 <PhotoLibraryCard
                   photo={photo}
                   selectPhoto={selectPhotoId}
