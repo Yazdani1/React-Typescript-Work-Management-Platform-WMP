@@ -13,6 +13,7 @@ interface ProductClotheCartItemProps {
 const ProductClotheCartItem: FC<ProductClotheCartItemProps> = ({
   product_Cart_item,
 }) => {
+    
   const { addProduct, product,removeProduct } = useProductClotheContext();
 
   const handleRemoveProduct = (productId:number) => {

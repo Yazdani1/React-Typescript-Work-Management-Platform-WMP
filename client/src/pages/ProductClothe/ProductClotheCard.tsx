@@ -16,6 +16,8 @@ const ProductClotheCard: FC<ProductClotheCardProps> = ({ product_items }) => {
     addProduct(selected_product);
   };
 
+  const isProductInCart = product.some(item => item.id === product_items.id);
+
   return (
     <CardLayout>
       <img src={product_items.image} height={200} width={200} />
@@ -25,7 +27,7 @@ const ProductClotheCard: FC<ProductClotheCardProps> = ({ product_items }) => {
       <p>
         {product_items.rating?.rate}/{product_items.rating?.count}
       </p>
-      {product.includes(product_items) ? (
+      {isProductInCart ? (
         <Link
           to={"/product-clothe-cart"}
           style={{ textDecoration: "none", color: "white" }}
