@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+
 //Custom
-import PageLayout from "../../Pagelayout/PageLayout";
-import { getExpenseCount, getAllExpenses } from "../../API";
-import CardLayout from "../../components/CardLayout";
+import PageLayout from '../../Pagelayout/PageLayout';
+import { getExpenseCount, getAllExpenses } from '../../API';
+import CardLayout from '../../components/CardLayout';
 
 const Expense = () => {
-
   //////////////////////////////////////////////////////
   /////////////////Load Total Expense Count/////////////
   //////////////////////////////////////////////////////
@@ -25,12 +25,13 @@ const Expense = () => {
       });
     }
   };
-  
+
   //////////////////////////////////////////////////////
   ///////////////// Load all expense       /////////////
   //////////////////////////////////////////////////////
+
   const [allExpense, setAllExpense] = useState([]);
-  
+
   const loadAllExpenses = async () => {
     try {
       const res = await getAllExpenses();
@@ -43,7 +44,6 @@ const Expense = () => {
       });
     }
   };
-  
 
   useEffect(() => {
     loadTotalExpenseCount();
@@ -60,6 +60,7 @@ const Expense = () => {
               <h4>{expense.total} EUR</h4>
             </CardLayout>
           ))}
+
         <h1>All Expenses</h1>
         {allExpense &&
           allExpense.map((allexpense: any, index) => (
