@@ -33,7 +33,9 @@ const HomeRental = () => {
       if (res) {
         setAllHomeRental(res.data);
       }
-    } catch (error: any) {}
+    } catch (error: any) {
+      
+    }
   };
 
   //////////////////////////////////////////////////////
