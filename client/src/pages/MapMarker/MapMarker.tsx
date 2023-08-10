@@ -1,32 +1,11 @@
-import { useEffect, useState } from "react";
-import Map, {
-  Marker,
-  NavigationControl,
-  Popup,
-  FullscreenControl,
-  GeolocateControl,
-} from "react-map-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
-import { ChromePicker } from "react-color";
+import { useEffect, useState } from 'react';
+import Map, { Marker, NavigationControl, Popup, FullscreenControl, GeolocateControl } from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { ChromePicker } from 'react-color';
 
-import PageLayout from "../../Pagelayout/PageLayout";
-import {
-  getMapMarkerForBerlin,
-  getMapMarkerForParis,
-  getMapMarkerForBrussels,
-} from "../../API";
-const colors = [
-  "blue",
-  "green",
-  "yellow",
-  "Red",
-  "Orange",
-  "Black",
-  "pink",
-  "white",
-  "tomato",
-];
-
+import PageLayout from '../../Pagelayout/PageLayout';
+import { getMapMarkerForBerlin, getMapMarkerForParis, getMapMarkerForBrussels } from '../../API';
+const colors = ['blue', 'green', 'yellow', 'Red', 'Orange', 'Black', 'pink', 'white', 'tomato'];
 
 const MapMarker = () => {
   const [data, setData] = useState<any>([]);
@@ -49,7 +28,7 @@ const MapMarker = () => {
 
   const [selectedMarker, setSelectedMarker] = useState<any>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [selectedColor, setSelectedColor] = useState<string>("Orange");
+  const [selectedColor, setSelectedColor] = useState<string>('Orange');
 
   const [showColorPicker, setShowColorPicker] = useState(false);
 
@@ -81,28 +60,26 @@ const MapMarker = () => {
   const [lng, setLng] = useState(7.056497376136575);
   const [lat, setLat] = useState(51.83708176405757);
 
-
   const GERMANY_BOUNDS: [[number, number], [number, number]] = [
     [3, 40],
-    [16, 56]
+    [16, 56],
   ];
-   
+
   return (
     <PageLayout>
-       <Map
+      <Map
         mapboxAccessToken="pk.eyJ1IjoieWF6ZGFuaTExIiwiYSI6ImNsZHhpM2lhbDBnemIzcW52ejg0ejJ2bjAifQ.2NW_EeCxlel8wvBzyjybVQ"
         style={{
-          width: "auto",
-          height: "800px",
-          borderRadius: "15px",
-          border: "2px solid red",
-          
+          width: 'auto',
+          height: '800px',
+          borderRadius: '15px',
+          border: '2px solid red',
         }}
         initialViewState={{
           longitude: 7.056497376136575,
           latitude: 51.83708176405757,
           zoom: 5,
-          bounds:GERMANY_BOUNDS
+          bounds: GERMANY_BOUNDS,
         }}
         mapStyle="mapbox://styles/mapbox/dark-v11"
         // mapStyle="mapbox://styles/mapbox/dark-v11"
@@ -111,10 +88,7 @@ const MapMarker = () => {
           // const backgroundColor =
           //   itemColors[index] || colors[index % colors.length];
 
-          const backgroundColor =
-            selectedIndex === index
-              ? selectedColor
-              : colors[index % colors.length];
+          const backgroundColor = selectedIndex === index ? selectedColor : colors[index % colors.length];
 
           // const backgroundColor =
           //   selectedIndex === index
@@ -133,8 +107,8 @@ const MapMarker = () => {
             >
               <div
                 style={{
-                  width: "32px",
-                  height: "32px",
+                  width: '32px',
+                  height: '32px',
                   backgroundColor: backgroundColor,
                 }}
               />
@@ -143,34 +117,27 @@ const MapMarker = () => {
         })}
 
         {selectedMarker ? (
-          <Popup
-            latitude={selectedMarker.capitalInfo.latlng[0]}
-            longitude={selectedMarker.capitalInfo.latlng[1]}
-            onClose={handleClosePopup}
-          >
+          <Popup latitude={selectedMarker.capitalInfo.latlng[0]} longitude={selectedMarker.capitalInfo.latlng[1]} onClose={handleClosePopup}>
             <h6>{selectedMarker.name.common}:</h6>
 
             <p>Choose Your Color</p>
-            <div style={{ marginTop: "20px" }}>
-              {showColorPicker && (
-                <ChromePicker color={selectedColor} onChange={handleChange} />
-              )}
+            <div style={{ marginTop: '20px' }}>
+              {showColorPicker && <ChromePicker color={selectedColor} onChange={handleChange} />}
 
-            {/* <input
+              {/* <input
                 placeholder="add your color"
                 value={selectedColor}
                 onChange={(e) => setSelectedColor(e.target.value)}
               />
               <button className="btn btn-primary">Change color</button>  */}
-
-             </div>
+            </div>
           </Popup>
         ) : null}
 
         <NavigationControl position="bottom-right" />
         <FullscreenControl />
         <GeolocateControl />
-       </Map>  
+      </Map>
     </PageLayout>
   );
 };

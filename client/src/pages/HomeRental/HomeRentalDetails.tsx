@@ -88,6 +88,7 @@ const HomeRentalDetails = () => {
         <p>
           Lang:{lng}lat:{lat}
         </p>
+
         <Map
           mapboxAccessToken="pk.eyJ1IjoieWF6ZGFuaTExIiwiYSI6ImNsZHhpM2lhbDBnemIzcW52ejg0ejJ2bjAifQ.2NW_EeCxlel8wvBzyjybVQ"
           style={{

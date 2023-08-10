@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
-import PageLayout from "../../Pagelayout/PageLayout";
-import CardLayout from "../../components/CardLayout";
-import { getOnlineStore } from "../../API";
+import PageLayout from '../../Pagelayout/PageLayout';
+import CardLayout from '../../components/CardLayout';
+import { getOnlineStore } from '../../API';
 
 const News = () => {
-
   //////////////////////////////////////////////////////
   // Show onlin store info in this file       //////////
   //////////////////////////////////////////////////////
@@ -54,7 +53,7 @@ const News = () => {
           <p>{allPosts[currentPostIndex]?.des}</p>
           <h4>{allPosts[currentPostIndex]?.price}</h4>
 
-          <span style={{ margin: "10px" }}>
+          <span style={{ margin: '10px' }}>
             {allPosts[currentPostIndex]?.photo.map((p: any) => (
               <img src={p} height="150px" width="150px" object-Fit="cover" />
             ))}

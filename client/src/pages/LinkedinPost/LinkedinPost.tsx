@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import PageLayout from "../../Pagelayout/PageLayout";
-import { getOnlineStore } from "../../API";
-import CardLayout from "../../components/CardLayout";
+import PageLayout from '../../Pagelayout/PageLayout';
+import { getOnlineStore } from '../../API';
+import CardLayout from '../../components/CardLayout';
 
 const LinkedinPost = () => {
-  
   /****************************************/
   /**  Load online store  *****************/
   /****************************************/
@@ -38,16 +37,14 @@ const LinkedinPost = () => {
             <h6>{item.price}</h6>
             <div>
               {item.photo.slice(0, 2).map((p: any) => (
-                <span style={{ margin: "10px" }}>
+                <span style={{ margin: '10px' }}>
                   <img src={p} height="200px" width="200px" />
                 </span>
               ))}
             </div>
             {item.photo.length > 3 && (
-              <span style={{ margin: "10px" }}>
-                <button className="btn btn-primary">
-                  View {item.photo.length - 3} more photos
-                </button>
+              <span style={{ margin: '10px' }}>
+                <button className="btn btn-primary">View {item.photo.length - 3} more photos</button>
               </span>
             )}
           </CardLayout>
