@@ -1,22 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import { IoAddCircleSharp } from "react-icons/io5";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import { IoAddCircleSharp } from 'react-icons/io5';
+import axios from 'axios';
 
 //Custom
-import PageLayout from "../../Pagelayout/PageLayout";
-import CardLayout from "../../components/CardLayout";
-import {
-  getAllProducts,
-  getAllFeaturedProducts,
-  createProduct,
-  CreateProductProps,
-} from "../../API";
-import ProductCard from "./ProductCard";
-import Modal from "../../components/Modal/Modal";
-import WMStyle from "../WM.module.css";
-import productCardStyle from "./ProductCard.module.css";
-import { Colors } from "../../Dataprovider";
+import PageLayout from '../../Pagelayout/PageLayout';
+import CardLayout from '../../components/CardLayout';
+import { getAllProducts, getAllFeaturedProducts, createProduct, CreateProductProps } from '../../API';
+import ProductCard from './ProductCard';
+import Modal from '../../components/Modal/Modal';
+import WMStyle from '../WM.module.css';
+import productCardStyle from './ProductCard.module.css';
+import { Colors } from '../../Dataprovider';
 
 const Product = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -26,14 +21,14 @@ const Product = () => {
   ///////////////// create products      ///////////////
   //////////////////////////////////////////////////////
 
-  const [title, setTitle] = useState<string>("");
-  const [price, setPrice] = useState<string>("");
-  const [city, setCity] = useState<string>("");
-  const [doors, setDoors] = useState<string>("");
-  const [brands, setBrands] = useState<string>("");
-  const [color, setColor] = useState<string>("");
+  const [title, setTitle] = useState<string>('');
+  const [price, setPrice] = useState<string>('');
+  const [city, setCity] = useState<string>('');
+  const [doors, setDoors] = useState<string>('');
+  const [brands, setBrands] = useState<string>('');
+  const [color, setColor] = useState<string>('');
   const [featured, setFeatured] = useState<boolean>(true);
-  const [deliveryType, setDeliveryType] = useState<string>("Free");
+  const [deliveryType, setDeliveryType] = useState<string>('Free');
 
   const handeSelectFeaturedCheckBox = () => {
     setFeatured(!featured);
@@ -55,7 +50,7 @@ const Product = () => {
       const res = await createProduct(payload);
 
       if (res) {
-        toast.success("Product created successfully", {
+        toast.success('Product created successfully', {
           position: toast.POSITION.TOP_RIGHT,
         });
         loadAllProducts();
@@ -70,23 +65,21 @@ const Product = () => {
   };
 
   const resetInputField = () => {
-    setTitle("");
-    setPrice("");
-    setCity("");
-    setDoors("");
-    setBrands("");
-    setColor("");
+    setTitle('');
+    setPrice('');
+    setCity('');
+    setDoors('');
+    setBrands('');
+    setColor('');
     setFeatured(false);
-    setDeliveryType("Free");
+    setDeliveryType('Free');
   };
 
   //////////////////////////////////////////////////////
   /////////////////    Radio button start ///////////////
   //////////////////////////////////////////////////////
 
-  const onChangeRadioButtonValue = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const onChangeRadioButtonValue = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDeliveryType(event.target.value);
   };
 
@@ -155,14 +148,14 @@ const Product = () => {
   ///////////////// Search Filter products//////////////
   //////////////////////////////////////////////////////
 
-  const [min, setMin] = useState<string>("1");
-  const [max, setMax] = useState<string>("900000");
-  const [limit, setLimit] = useState("60");
+  const [min, setMin] = useState<string>('1');
+  const [max, setMax] = useState<string>('900000');
+  const [limit, setLimit] = useState('60');
   const [featuredProducts, setFeaturedProducts] = useState(false);
-  const [searchByColor, setSearchByColor] = useState("Red");
+  const [searchByColor, setSearchByColor] = useState('Red');
 
   // to show search field in tag option
-  const [productColor, setProductColor] = useState("");
+  const [productColor, setProductColor] = useState('');
 
   const handleSearchFeaturedProductCheckBox = () => {
     setFeaturedProducts(!featuredProducts);
@@ -203,9 +196,9 @@ const Product = () => {
   const searchProducts = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/filter?featuredproduct=${featuredProducts}&color=${searchByColor}&limit=${parseInt(
-          limit
-        )}&min=${parseInt(min)}&max=${parseInt(max)}`
+        `http://localhost:8080/api/filter?featuredproduct=${featuredProducts}&color=${searchByColor}&limit=${parseInt(limit)}&min=${parseInt(
+          min
+        )}&max=${parseInt(max)}`
       );
       if (res) {
         setAllProducts(res.data);
@@ -222,9 +215,9 @@ const Product = () => {
   //////////////////////////////////////////////////////
 
   const resetFilter = () => {
-    setMin("1");
-    setMax("900000");
-    setLimit("60");
+    setMin('1');
+    setMax('900000');
+    setLimit('60');
     setFeaturedProducts(false);
     loadAllProducts();
   };
@@ -245,27 +238,13 @@ const Product = () => {
               <div className={WMStyle.wm_form}>
                 <label>Min Price:</label>
 
-                <input
-                  type="text"
-                  className="form-control"
-                  value={min}
-                  onChange={(e) => setMin(e.target.value)}
-                />
+                <input type="text" className="form-control" value={min} onChange={(e) => setMin(e.target.value)} />
 
                 <label>Max Price:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  value={max}
-                  onChange={(e) => setMax(e.target.value)}
-                />
+                <input type="text" className="form-control" value={max} onChange={(e) => setMax(e.target.value)} />
 
                 <div className="selected-dropdownlist">
-                  <select
-                    className={productCardStyle.custom_select}
-                    value={searchByColor}
-                    onChange={(e) => setSearchByColor(e.target.value)}
-                  >
+                  <select className={productCardStyle.custom_select} value={searchByColor} onChange={(e) => setSearchByColor(e.target.value)}>
                     {Object.keys(Colors).map((i, index) => (
                       <option value={i}>{i}</option>
                     ))}
@@ -273,12 +252,7 @@ const Product = () => {
                 </div>
 
                 <label>Number of products you want to see:</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  value={limit}
-                  onChange={(e) => setLimit(e.target.value)}
-                />
+                <input type="text" className="form-control" value={limit} onChange={(e) => setLimit(e.target.value)} />
               </div>
 
               {/* <div style={{ display: "flex", marginTop: "20px" }}>
@@ -298,18 +272,14 @@ const Product = () => {
                 {greenColorProduct}
               </div> */}
 
-              <div style={{ display: "flex", marginTop: "20px" }}>
+              <div style={{ display: 'flex', marginTop: '20px' }}>
                 <label>
-                  <input
-                    type="checkbox"
-                    checked={featuredProducts}
-                    onChange={handleSearchFeaturedProductCheckBox}
-                  />
+                  <input type="checkbox" checked={featuredProducts} onChange={handleSearchFeaturedProductCheckBox} />
                   Featured products
                 </label>
               </div>
 
-              <div style={{ marginTop: "40px" }}>
+              <div style={{ marginTop: '40px' }}>
                 <button className="btn btn-success" onClick={searchProducts}>
                   Search
                 </button>
@@ -322,22 +292,17 @@ const Product = () => {
           </div>
           <div className="col-xl-8 col-lg-8 col-md-12 col-sm-12">
             <CardLayout backgroun_color="white">
-              <div style={{ display: "flex", marginLeft: "10px" }}>
-                <input
-                  type="checkbox"
-                  checked={checkedFeatured}
-                  onChange={handleCheckBoxFeaturedValueChange}
-                  style={{ marginLeft: "10px" }}
-                />
-                <h6 style={{ marginLeft: "20px" }}>Featured Products</h6>
+              <div style={{ display: 'flex', marginLeft: '10px' }}>
+                <input type="checkbox" checked={checkedFeatured} onChange={handleCheckBoxFeaturedValueChange} style={{ marginLeft: '10px' }} />
+                <h6 style={{ marginLeft: '20px' }}>Featured Products</h6>
               </div>
               <div>
                 <p
                   style={{
-                    background: "black",
-                    width: "fit-content",
-                    padding: "10px",
-                    color: "white",
+                    background: 'black',
+                    width: 'fit-content',
+                    padding: '10px',
+                    color: 'white',
                   }}
                 >
                   {productColor}
@@ -346,10 +311,7 @@ const Product = () => {
               <div className={WMStyle.wm_header}>
                 <h6>Create Work Management</h6>
                 <p>
-                  <IoAddCircleSharp
-                    size={25}
-                    onClick={() => setOpenModal(true)}
-                  />
+                  <IoAddCircleSharp size={25} onClick={() => setOpenModal(true)} />
                 </p>
               </div>
               {/* {checkedAllProduct &&
@@ -375,19 +337,11 @@ const Product = () => {
               {checkedFeatured
                 ? allFeaturedProducts &&
                   allFeaturedProducts.map((product, index) => (
-                    <ProductCard
-                      product={product}
-                      loadAllProducts={loadAllProducts}
-                      loadAllFeaturedProducts={loadAllFeturedProducts}
-                    />
+                    <ProductCard product={product} loadAllProducts={loadAllProducts} loadAllFeaturedProducts={loadAllFeturedProducts} />
                   ))
                 : allProducts &&
                   allProducts.map((product, index) => (
-                    <ProductCard
-                      product={product}
-                      loadAllProducts={loadAllProducts}
-                      loadAllFeaturedProducts={loadAllFeturedProducts}
-                    />
+                    <ProductCard product={product} loadAllProducts={loadAllProducts} loadAllFeaturedProducts={loadAllFeturedProducts} />
                   ))}
               <Modal
                 open={openModal}
@@ -399,33 +353,14 @@ const Product = () => {
               >
                 <div className={WMStyle.wm_form}>
                   <label>Title:</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                  />
+                  <input type="text" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} />
                   <label>Price:</label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                  />
+                  <input type="number" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} />
                   <label>City:</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                  />
+                  <input type="text" className="form-control" value={city} onChange={(e) => setCity(e.target.value)} />
                   <label>Brand:</label>
                   <div className="selected-dropdownlist">
-                    <select
-                      className={productCardStyle.custom_select}
-                      value={brands}
-                      onChange={(e) => setBrands(e.target.value)}
-                    >
+                    <select className={productCardStyle.custom_select} value={brands} onChange={(e) => setBrands(e.target.value)}>
                       <option>--Select brand--</option>
                       <option value="BMW">BMW</option>
                       <option value="Audi">Audi</option>
@@ -437,11 +372,7 @@ const Product = () => {
                   </div>
                   <label>Color:</label>
                   <div className="selected-dropdownlist">
-                    <select
-                      className={productCardStyle.custom_select}
-                      value={color}
-                      onChange={(e) => setColor(e.target.value)}
-                    >
+                    <select className={productCardStyle.custom_select} value={color} onChange={(e) => setColor(e.target.value)}>
                       <option>--Select color--</option>
                       {Object.keys(Colors).map((i, index) => (
                         <option value={i}>{i}</option>
@@ -449,27 +380,14 @@ const Product = () => {
                     </select>
                   </div>
                   <label>Number of doors:</label>
-                  <input
-                    type="number"
-                    className="form-control"
-                    value={doors}
-                    onChange={(e) => setDoors(e.target.value)}
-                  />
+                  <input type="number" className="form-control" value={doors} onChange={(e) => setDoors(e.target.value)} />
                   <label>Delivery type:</label>
 
                   {/* Radio button */}
-                  <div
-                    onChange={onChangeRadioButtonValue}
-                    className={productCardStyle.radio_buttons}
-                  >
+                  <div onChange={onChangeRadioButtonValue} className={productCardStyle.radio_buttons}>
                     <div className={productCardStyle.featuredCheckBox}>
                       <label>
-                        <input
-                          type="radio"
-                          value="Free"
-                          name="delivery"
-                          checked={deliveryType === "Free"}
-                        />
+                        <input type="radio" value="Free" name="delivery" checked={deliveryType === 'Free'} />
                         <div className={productCardStyle.checkBoxText}>
                           <p>Free</p>
                         </div>
@@ -477,12 +395,7 @@ const Product = () => {
                     </div>
                     <div className={productCardStyle.featuredCheckBox}>
                       <label>
-                        <input
-                          type="radio"
-                          value="Paid"
-                          name="delivery"
-                          checked={deliveryType === "Paid"}
-                        />
+                        <input type="radio" value="Paid" name="delivery" checked={deliveryType === 'Paid'} />
                         <div className={productCardStyle.checkBoxText}>
                           <p>Paid</p>
                         </div>
@@ -492,11 +405,7 @@ const Product = () => {
 
                   <div className={productCardStyle.featuredCheckBox}>
                     <label>
-                      <input
-                        type="checkbox"
-                        checked={featured}
-                        onChange={handeSelectFeaturedCheckBox}
-                      />
+                      <input type="checkbox" checked={featured} onChange={handeSelectFeaturedCheckBox} />
                       {featured.toString()}
                       <div className={productCardStyle.checkBoxText}>
                         <p>Featured</p>

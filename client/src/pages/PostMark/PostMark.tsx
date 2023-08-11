@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import style from "./PostMark.module.scss";
-import PageLayout from "../../Pagelayout/PageLayout";
-import { getJsonPlaceHolderPostData } from "../../API";
-import CardLayout from "../../components/CardLayout";
+import style from './PostMark.module.scss';
+import PageLayout from '../../Pagelayout/PageLayout';
+import { getJsonPlaceHolderPostData } from '../../API';
+import CardLayout from '../../components/CardLayout';
 
 const PostMark = () => {
-
   /****************************************/
   /************* Load all data  ***********/
   /****************************************/
@@ -54,12 +53,7 @@ const PostMark = () => {
           <CardLayout backgroun_color="white">
             {allData &&
               allData.map((item: any, index: number) => (
-                <div
-                  className={
-                    selectedPost === index ? style.itemMarked : style.itemList
-                  }
-                  onClick={() => handleSelectPost(index)}
-                >
+                <div className={selectedPost === index ? style.itemMarked : style.itemList} onClick={() => handleSelectPost(index)}>
                   <h6>
                     {item.title}.{index}
                   </h6>
