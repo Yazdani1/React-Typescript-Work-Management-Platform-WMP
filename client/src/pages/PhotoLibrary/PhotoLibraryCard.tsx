@@ -1,18 +1,16 @@
-import React, { FC,useState } from "react";
+import React, { FC, useState } from 'react';
 
-import { PhotoLibraryInfo,OnlineStoreInfo } from "../../Dataprovider";
-import style from "./PhotoLibraryCard.module.scss";
-import ModalBox from "../../components/Modal Package/ModalBox";
+import { PhotoLibraryInfo, OnlineStoreInfo } from '../../Dataprovider';
+import style from './PhotoLibraryCard.module.scss';
+import ModalBox from '../../components/Modal Package/ModalBox';
 
 interface PhotoLibraryCardProps {
   photo: PhotoLibraryInfo;
-  selectPhoto?: (url: string)=> void;
-  photoLibraryPhotoID?:[String];
-
+  selectPhoto?: (url: string) => void;
+  photoLibraryPhotoID?: [String];
 }
 
-const PhotoLibraryCard: FC<PhotoLibraryCardProps> = ({ photo,selectPhoto,photoLibraryPhotoID }) => {
-
+const PhotoLibraryCard: FC<PhotoLibraryCardProps> = ({ photo, selectPhoto, photoLibraryPhotoID }) => {
   /****************************************/
   /***Slider for photo Library ***********/
   /****************************************/
@@ -52,19 +50,18 @@ const PhotoLibraryCard: FC<PhotoLibraryCardProps> = ({ photo,selectPhoto,photoLi
   //   );
   // };
 
-
-
   return (
-    <div className={photoLibraryPhotoID?.includes(photo.imageUrl)? style.selectedPhotoCardContiner:style.photoCardContainer} onClick={()=>selectPhoto?.(photo.imageUrl)}>
-        <span>
-        <img src={photo.imageUrl}  />
+    <div
+      className={photoLibraryPhotoID?.includes(photo.imageUrl) ? style.selectedPhotoCardContiner : style.photoCardContainer}
+      onClick={() => selectPhoto?.(photo.imageUrl)}
+    >
+      <span>
+        <img src={photo.imageUrl} />
+      </span>
 
-        </span>
+      {/* Modal Box -To create Photo Library  */}
 
-              {/* Modal Box -To create Photo Library  */}
-
-
-                    {/* // Modal to show image slide when user click on the image */}
+      {/* // Modal to show image slide when user click on the image */}
 
       {/* <ModalBox open={open} onCloseModal={handleCloseModal}>
         <div className={style.imageSliderDesign}>
@@ -97,7 +94,6 @@ const PhotoLibraryCard: FC<PhotoLibraryCardProps> = ({ photo,selectPhoto,photoLi
           </span>
         </div>
       </ModalBox> */}
-
     </div>
   );
 };

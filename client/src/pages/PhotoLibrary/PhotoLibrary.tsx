@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { toast } from "react-toastify";
+import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
-import PageLayout from "../../Pagelayout/PageLayout";
-import CardLayout from "../../components/CardLayout";
-import ModalBox from "../../components/Modal Package/ModalBox";
-import style from "./PhotoLibrary.module.scss";
-import {
-  getPhotoLibrary,
-  CreatePhotoLinraryProps,
-  createPhotoLibrary,
-  getPhotoLibraryWithPagination,
-} from "../../API";
-import PhotoLibraryCard from "./PhotoLibraryCard";
+import PageLayout from '../../Pagelayout/PageLayout';
+import CardLayout from '../../components/CardLayout';
+import ModalBox from '../../components/Modal Package/ModalBox';
+import style from './PhotoLibrary.module.scss';
+import { getPhotoLibrary, CreatePhotoLinraryProps, createPhotoLibrary, getPhotoLibraryWithPagination } from '../../API';
+import PhotoLibraryCard from './PhotoLibraryCard';
 
 const PhotoLibrary = () => {
   /****************************************/
@@ -31,7 +26,7 @@ const PhotoLibrary = () => {
   /***   Create Photo Library   **********/
   /****************************************/
 
-  const [imageUrl, setImageUrl] = useState<string>("");
+  const [imageUrl, setImageUrl] = useState<string>('');
 
   const onSubmitCreatePhotoLibrary = async () => {
     try {
@@ -40,7 +35,7 @@ const PhotoLibrary = () => {
       const res = await createPhotoLibrary(payload);
 
       if (res) {
-        toast.success("Photo created successfully", {
+        toast.success('Photo created successfully', {
           position: toast.POSITION.TOP_RIGHT,
         });
         loadPhotoLibrary();
@@ -55,7 +50,7 @@ const PhotoLibrary = () => {
   };
 
   const resetInputField = () => {
-    setImageUrl("");
+    setImageUrl('');
   };
 
   /****************************************/
@@ -85,11 +80,10 @@ const PhotoLibrary = () => {
   /****************************************/
 
   // these are state that needs to get the api data withpagination
-  
 
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
-  const [limit, setLimit] = useState<string>("12");
+  const [limit, setLimit] = useState<string>('12');
 
   const loadPhotoWithPagination = async () => {
     try {
@@ -146,12 +140,7 @@ const PhotoLibrary = () => {
 
   return (
     <PageLayout>
-      <CardLayout
-        backgroun_color="white"
-        openModal={onOpenModal}
-        headerTitle="Create Photo Library"
-        showAddIcon={true}
-      ></CardLayout>
+      <CardLayout backgroun_color="white" openModal={onOpenModal} headerTitle="Create Photo Library" showAddIcon={true}></CardLayout>
 
       {/* To show list of phots */}
 
@@ -160,13 +149,13 @@ const PhotoLibrary = () => {
 
         <div className="row">
           {allPhoto &&
-            allPhoto.map((photo:any) => (
+            allPhoto.map((photo: any) => (
               <div className="col-xl-2 col-lg-2 col-sm-12">
-                <PhotoLibraryCard photo={photo} key={photo._id}/>
+                <PhotoLibraryCard photo={photo} key={photo._id} />
               </div>
             ))}
         </div>
-   
+
         {/* To show the pagination page number */}
         {/* Render the pagination numbers */}
         <div className={style.paginationContainer}>
@@ -176,11 +165,7 @@ const PhotoLibrary = () => {
             </button>
             {getPaginationNumbers().map((number) => (
               <span
-                className={
-                  page === number
-                    ? style.activePagePaginationNumber
-                    : style.paginationPageNumber
-                }
+                className={page === number ? style.activePagePaginationNumber : style.paginationPageNumber}
                 onClick={() => handlePageChange(number)}
               >
                 <p>{number}</p>
@@ -191,11 +176,7 @@ const PhotoLibrary = () => {
             </button>
 
             <div>
-              <input
-                type="number"
-                value={limit}
-                onChange={(e) => setLimit(e.target.value)}
-              />
+              <input type="number" value={limit} onChange={(e) => setLimit(e.target.value)} />
             </div>
           </div>
         </div>
@@ -213,13 +194,7 @@ const PhotoLibrary = () => {
       >
         <label>Photo Link:</label>
         <div className="form-group">
-          <input
-            type="text"
-            name="Photo URL"
-            className={style.photoUrlInput}
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-          />
+          <input type="text" name="Photo URL" className={style.photoUrlInput} value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
         </div>
       </ModalBox>
     </PageLayout>

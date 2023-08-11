@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
-import PageLayout from "../../Pagelayout/PageLayout";
-import CardLayout from "../../components/CardLayout";
-import { getOnlineStore } from "../../API";
-import ModalBox from "../../components/Modal Package/ModalBox";
-import { OnlineStoreInfo } from "../../Dataprovider";
+import PageLayout from '../../Pagelayout/PageLayout';
+import CardLayout from '../../components/CardLayout';
+import { getOnlineStore } from '../../API';
+import ModalBox from '../../components/Modal Package/ModalBox';
+import { OnlineStoreInfo } from '../../Dataprovider';
 
 const PostList = () => {
   //////////////////////////////////////////////////////
@@ -37,7 +37,7 @@ const PostList = () => {
   const onOpenModal = () => {
     setOpen(true);
   };
-  
+
   const onCloseModal = () => {
     setOpen(false);
   };
@@ -60,8 +60,7 @@ const PostList = () => {
 
   const handleNextClick = () => {
     const currentIndex = allPosts.indexOf(currentPost);
-    const nextIndex =
-      currentIndex + 1 >= allPosts.length ? 0 : currentIndex + 1;
+    const nextIndex = currentIndex + 1 >= allPosts.length ? 0 : currentIndex + 1;
     setCurrentPost(allPosts[nextIndex]);
   };
 
@@ -69,8 +68,7 @@ const PostList = () => {
 
   const handlePreviousClick = () => {
     const currentIndex = allPosts.indexOf(currentPost);
-    const nextIndex =
-      currentIndex - 1 >= allPosts.length ? 0 : currentIndex - 1;
+    const nextIndex = currentIndex - 1 >= allPosts.length ? 0 : currentIndex - 1;
     setCurrentPost(allPosts[nextIndex]);
   };
 
@@ -89,7 +87,7 @@ const PostList = () => {
               <h6>{post.price}</h6>
               <span>
                 {post.photo.map((p: any) => (
-                  <span style={{ margin: "10px", objectFit: "cover" }}>
+                  <span style={{ margin: '10px', objectFit: 'cover' }}>
                     <img src={p} height="150px" width="150px" />
                   </span>
                 ))}
@@ -107,14 +105,14 @@ const PostList = () => {
           <h4>{currentPost?.price}</h4>
           <span>
             {currentPost?.photo.map((p: any) => (
-              <span style={{ margin: "10px" }}>
+              <span style={{ margin: '10px' }}>
                 <img src={p} height="100px" width="100px" />
               </span>
             ))}
           </span>
           <p>{currentPost?._id}</p>
 
-          <span style={{ margin: "10px" }}>
+          <span style={{ margin: '10px' }}>
             <button className="btn btn-success" onClick={handlePreviousClick}>
               Previous
             </button>
