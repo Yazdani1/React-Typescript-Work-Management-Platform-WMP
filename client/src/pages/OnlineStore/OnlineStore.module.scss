@@ -1,5 +1,5 @@
-@import "../../styles/Variables.scss";
-@import "../../styles/Mixin.scss";
+@import '../../styles/Variables.scss';
+@import '../../styles/Mixin.scss';
 
 .onlineStoreInputField {
   @include inputFieldDesign;
@@ -23,7 +23,6 @@
 }
 
 .selectedPhotoList {
-
   img {
     margin: 10px;
     height: 100px;

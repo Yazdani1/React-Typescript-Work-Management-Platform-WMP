@@ -1,9 +1,9 @@
-import { FC, useState } from "react";
-import moment from "moment";
+import { FC, useState } from 'react';
+import moment from 'moment';
 
-import { OnlineStoreInfo } from "../../Dataprovider";
-import style from "./OnlineStoreCard.module.scss";
-import ModalBox from "../../components/Modal Package/ModalBox";
+import { OnlineStoreInfo } from '../../Dataprovider';
+import style from './OnlineStoreCard.module.scss';
+import ModalBox from '../../components/Modal Package/ModalBox';
 
 interface OnlineStoreCardProps {
   online_store: OnlineStoreInfo;
@@ -20,9 +20,9 @@ const OnlineStoreCard: FC<OnlineStoreCardProps> = ({ online_store }) => {
     twoDaysAgo.setDate(twoDaysAgo.getDate() - 1);
 
     if (date >= twoDaysAgo) {
-      return "New";
+      return 'New';
     } else {
-      return "Old";
+      return 'Old';
     }
   };
 
@@ -48,21 +48,13 @@ const OnlineStoreCard: FC<OnlineStoreCardProps> = ({ online_store }) => {
 
   // to handle index position of photo and based on this positin to show in the modal box image
   const handleNext = () => {
-    setCurrentImageIndex(
-      currentImageIndex + 1 >= online_store.photo?.length
-        ? 0
-        : currentImageIndex + 1
-    );
+    setCurrentImageIndex(currentImageIndex + 1 >= online_store.photo?.length ? 0 : currentImageIndex + 1);
   };
 
   // to handle previous button to show previous photo
 
   const handlePrevious = () => {
-    setCurrentImageIndex(
-      currentImageIndex - 1 >= online_store.photo?.length
-        ? 0
-        : currentImageIndex - 1
-    );
+    setCurrentImageIndex(currentImageIndex - 1 >= online_store.photo?.length ? 0 : currentImageIndex - 1);
   };
 
   return (
@@ -78,11 +70,9 @@ const OnlineStoreCard: FC<OnlineStoreCardProps> = ({ online_store }) => {
         <p>{online_store.des.substring(0, 700)}</p>
 
         <h3>{online_store.price}.EUR</h3>
-        <p>{moment(online_store.date).format("MMMM Do YYYY, h:mm:ss a")}</p>
+        <p>{moment(online_store.date).format('MMMM Do YYYY, h:mm:ss a')}</p>
 
-        <div className={style.tagDesign}>
-          {getPostTag(new Date(online_store.date))}
-        </div>
+        <div className={style.tagDesign}>{getPostTag(new Date(online_store.date))}</div>
       </div>
       {/* // Modal to show image slide when user click on the image */}
 
@@ -90,11 +80,7 @@ const OnlineStoreCard: FC<OnlineStoreCardProps> = ({ online_store }) => {
         <div className={style.imageSliderDesign}>
           <span>
             {currentImageIndex <= 0 ? (
-              <button
-                disabled
-                className="btn btn-success"
-                onClick={handlePrevious}
-              >
+              <button disabled className="btn btn-success" onClick={handlePrevious}>
                 Previous
               </button>
             ) : (
@@ -103,12 +89,10 @@ const OnlineStoreCard: FC<OnlineStoreCardProps> = ({ online_store }) => {
               </button>
             )}
           </span>
-          <span>{currentImageIndex}/{online_store.photo.length}</span>
-          <img
-            src={online_store.photo[currentImageIndex]}
-            height="400px"
-            width="350px"
-          />
+          <span>
+            {currentImageIndex}/{online_store.photo.length}
+          </span>
+          <img src={online_store.photo[currentImageIndex]} height="400px" width="350px" />
           <span>
             <button className="btn btn-success" onClick={handleNext}>
               Next
