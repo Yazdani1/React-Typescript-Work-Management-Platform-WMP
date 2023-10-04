@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 //Custom
-import PageLayout from "../../Pagelayout/PageLayout";
-import ecommerceStyle from "./ECommerce.module.css";
-import {
-  getAllEcommerceCategory,
-  getAllEcommerceItem,
-  searchEcommerceItem,
-} from "../../API";
-import ECommerceCategoryCard from "./ECommerceCategoryCard";
-import CardLayout from "../../components/CardLayout";
-import ECommerceItemCard from "./ECommerceItemCard";
+import PageLayout from '../../Pagelayout/PageLayout';
+import ecommerceStyle from './ECommerce.module.css';
+import { getAllEcommerceCategory, getAllEcommerceItem, searchEcommerceItem } from '../../API';
+import ECommerceCategoryCard from './ECommerceCategoryCard';
+import CardLayout from '../../components/CardLayout';
+import ECommerceItemCard from './ECommerceItemCard';
 
 const ECommerce = () => {
   //////////////////////////////////////////////////////
@@ -42,9 +38,8 @@ const ECommerce = () => {
 
   const loadAllECommerceItem = async () => {
     try {
-
       const res = await getAllEcommerceItem();
-      
+
       if (res) {
         setAllECommerceItem(res.data);
       }
@@ -67,10 +62,8 @@ const ECommerce = () => {
     const index = selectedCateogryID.indexOf(catid);
     if (index === -1) {
       selectedCateogryID.push(catid);
-
     } else {
       selectedCateogryID.splice(index, 1);
-    
     }
     setCategoryId(selectedCateogryID);
   };
@@ -109,7 +102,6 @@ const ECommerce = () => {
     loadAllECommerceCategory();
     loadAllECommerceItem();
     selectAllCategory();
-
   }, []);
 
   return (
@@ -124,34 +116,21 @@ const ECommerce = () => {
               {loadAllCategory &&
                 loadAllCategory.map((ecat: any, index) => (
                   <>
-                    <ECommerceCategoryCard
-                      ecategory={ecat}
-                      selectCategoryID={selectCatId}
-                      ecategoryListId={categoryId}
-                    />
+                    <ECommerceCategoryCard ecategory={ecat} selectCategoryID={selectCatId} ecategoryListId={categoryId} />
                   </>
                 ))}
               {categoryId.length > 0 ? (
-                <button
-                  className="btn btn-primary"
-                  onClick={searchECommerceItem}
-                >
+                <button className="btn btn-primary" onClick={searchECommerceItem}>
                   Search
                 </button>
               ) : (
-                <button
-                  disabled
-                  className="btn btn-primary"
-                  onClick={searchECommerceItem}
-                >
+                <button disabled className="btn btn-primary" onClick={searchECommerceItem}>
                   Search
                 </button>
               )}
 
               {/* To render it conditionaly select and unselect button, 
-              
               if user select any item then select button will turn to unselct button
-
               */}
 
               {categoryId.length >= 1 ? (
@@ -163,9 +142,9 @@ const ECommerce = () => {
                   Select All
                 </button>
               )}
-
             </CardLayout>
           </div>
+
           <div className="col-xl-8 col-lg-8 col-md-12 col-sm-12">
             <CardLayout backgroun_color="white">
               <h4>Post List</h4>
