@@ -65,6 +65,7 @@ const ECommerce = () => {
     } else {
       selectedCateogryID.splice(index, 1);
     }
+
     setCategoryId(selectedCateogryID);
   };
 
