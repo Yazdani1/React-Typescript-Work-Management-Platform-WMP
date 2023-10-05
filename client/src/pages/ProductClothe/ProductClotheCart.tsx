@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
-import style from "./ProductClothe.module.scss";
-import { getAllProductsClothe } from "../../API";
-import { ProductClotheItem } from "../../Dataprovider";
-import PageLayout from "../../Pagelayout/PageLayout";
-import CardLayout from "../../components/CardLayout";
-import ProductClotheCartItem from "./ProductClotheCartItem";
-import { useProductClotheContext } from "../../ContextApi/ProductClotheContext";
+import style from './ProductClothe.module.scss';
+import { getAllProductsClothe } from '../../API';
+import { ProductClotheItem } from '../../Dataprovider';
+import PageLayout from '../../Pagelayout/PageLayout';
+import CardLayout from '../../components/CardLayout';
+import ProductClotheCartItem from './ProductClotheCartItem';
+import { useProductClotheContext } from '../../ContextApi/ProductClotheContext';
 
 const ProductClotheCart = () => {
-  const { addProduct, product } = useProductClotheContext();
+  const { product } = useProductClotheContext();
 
   return (
     <PageLayout>
